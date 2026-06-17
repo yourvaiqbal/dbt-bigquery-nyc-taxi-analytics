@@ -18,6 +18,15 @@ The goal is to transform raw taxi trip records into business-ready datasets and 
 
 ---
 
+## Dashboard Preview
+
+[dashboard screenshot]
+
+Tableau Public:
+https://...
+
+---
+
 ## Project Architecture
 
 Raw Data (BigQuery)
@@ -60,6 +69,10 @@ Tableau Dashboard
 * mart_hourly_trips
 * mart_weekday_trips
 * mart_kpi_summary
+
+## dbt Lineage
+
+[image]
 
 ---
 
