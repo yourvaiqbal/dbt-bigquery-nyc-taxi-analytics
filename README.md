@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project demonstrates an end-to-end analytics workflow using BigQuery, dbt, GitHub, and Tableau to analyze NYC Taxi trip data.
+An end-to-end Analytics Engineering project that transforms raw NYC Yellow Taxi trip data into an analytics-ready Data Mart using Google BigQuery and dbt, then delivers interactive business dashboards in Tableau.
 
 The goal is to transform raw taxi trip records into business-ready datasets and create dashboards that provide insights into trip volume, revenue trends, passenger activity, and peak operating periods.
 
