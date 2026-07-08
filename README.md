@@ -111,116 +111,211 @@ Tableau Public
 
 ## Project Architecture
 
-Raw Data (BigQuery)
+This project follows a modern ELT (Extract, Load, Transform) workflow. Raw trip data is loaded into Google BigQuery, transformed into business-ready datasets using SQL and dbt, exported as aggregated reporting tables, and finally visualized in Tableau.
 
-↓
-
-Source Layer
-
-↓
-
-Staging Layer (dbt)
-
-↓
-
-Mart Layer (dbt)
-
-↓
-
-CSV Export
-
-↓
-
-Tableau Dashboard
+```text
+NYC Yellow Taxi Trip Records
+                │
+                ▼
+        Google BigQuery
+                │
+                ▼
+      SQL Transformation
+                │
+                ▼
+         dbt Data Models
+                │
+                ▼
+      Analytics Data Mart
+                │
+                ▼
+     Aggregated CSV Export
+                │
+                ▼
+      Tableau Dashboard
+```
 
 ---
 
-## dbt Models
+## Data Model
 
-### Source
+The project follows a layered data modeling approach to transform raw transactional data into business-ready datasets for reporting and dashboard development.
 
-* stg_taxi_q1_2022
+### Source Layer
 
-### Staging
+The raw NYC Yellow Taxi Trip Records are stored in Google BigQuery without business transformations. This layer serves as the single source of truth for the project.
 
-* stg_taxi_trip
+### Staging Layer
 
-### Mart
+The staging layer standardizes the raw data by:
 
-* mart_daily_trips
-* mart_hourly_trips
-* mart_weekday_trips
-* mart_kpi_summary
+- Renaming columns with consistent naming conventions
+- Converting data types
+- Removing unnecessary fields
+- Creating derived date and time attributes
+- Preparing clean datasets for downstream transformations
+
+### Mart Layer
+
+The mart layer contains aggregated datasets optimized for business reporting and Tableau dashboards.
+
+The following reporting tables were created:
+
+| Model | Description |
+|--------|-------------|
+| `mart_daily_trips` | Daily revenue and trip performance |
+| `mart_hourly_trips` | Trip distribution by hour of day |
+| `mart_weekday_trips` | Revenue and trips by weekday |
+| `mart_kpi_summary` | Executive KPI summary for dashboard |
+
+This layered approach improves data organization, simplifies maintenance, and supports reusable analytics workflows.
+
+---
 
 ## dbt Lineage
 
-[image]
+The data transformation workflow was implemented using dbt Core, allowing each transformation step to be organized into reusable and modular data models.
+
+The lineage graph illustrates the dependency between the source data, staging model, and mart models, making the transformation pipeline easier to understand, maintain, and extend.
+
+### Lineage Graph
+
+![dbt Lineage](assets/lineage_graph.png)
+
+### Interactive dbt Documentation
+
+Explore the generated dbt documentation, including model lineage, metadata, and dependencies.
+
+🔗 **Live dbt Docs**
+
+https://YOUR_DBT_DOCS_LINK
+
+The modular design enables each transformation model to be developed, tested, and maintained independently while preserving clear dependencies across the entire analytics workflow.
 
 ---
 
-## Data Quality Tests
+## Dashboard Features
 
-Implemented dbt tests:
+The Tableau dashboard provides an interactive overview of NYC Yellow Taxi performance during Q1 2022. It is designed to present key operational metrics and trends through a clean executive reporting interface.
 
-* not_null pickup_datetime
-* not_null total_amount
+### Executive KPIs
 
----
+- Total Revenue
+- Total Trips
+- Average Trip Value
+- Average Passengers per Trip
 
-## Key Performance Indicators (KPIs)
+### Visualizations
 
-* Total Trips
-* Total Revenue
-* Total Passengers
-* Average Revenue per Trip
-* Peak Operating Hours
-* Busiest Weekdays
+- Monthly Revenue Comparison
+- Daily Revenue Trend
+- Hourly Trip Distribution
+- Revenue by Weekday
 
----
+### Interactive Features
 
-## Business Questions
+- Month filter (January–March 2022)
+- Dynamic KPI updates
+- Interactive chart filtering
+- Detailed tooltips for each visualization
 
-1. Which days generate the highest number of trips?
-2. Which hours are the busiest?
-3. How much revenue is generated daily?
-4. How many passengers are transported over time?
+### Dashboard Design
+
+The dashboard was designed using a container-based layout in Tableau to ensure a structured, consistent, and maintainable reporting interface.
 
 ---
 
 ## Repository Structure
 
 ```text
-models/
-├── staging/
-│   └── stg_taxi_trip.sql
-
-└── marts/
-    ├── mart_daily_trips.sql
-    ├── mart_hourly_trips.sql
-    ├── mart_weekday_trips.sql
-    └── mart_kpi_summary.sql
+dbt-bigquery-nyc-taxi-analytics
+│
+├── assets
+│   ├── dashboard.png
+│   ├── bigquery_schema.png
+│   ├── lineage_graph.png
+│   └── dbt_docs.png
+│
+├── data
+│   └── exports
+│       ├── daily_trips.csv
+│       ├── hourly_trips.csv
+│       ├── kpi_summary.csv
+│       └── weekday_trips.csv
+│
+├── dbt
+│
+├── sql
+│   ├── 01_staging
+│   ├── 02_marts
+│   └── 03_validation
+│
+├── tableau
+│   └── nyc_taxi.twb
+│
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
+
+The repository is organized to separate SQL transformations, exported datasets, Tableau assets, project documentation, and future dbt development, making the project easier to maintain and extend.
 
 ---
 
-## Project Status
+## Business Insights
 
-* Data Source Connected
-* dbt Models Built
-* Data Tests Passed
-* Documentation Generated
-* Lineage Graph Created
-* GitHub Repository Published
-* Tableau Dashboard (In Progress)
+The dashboard enables users to explore operational performance and answer key business questions using interactive visualizations and KPI summaries.
+
+Some examples include:
+
+- How does total revenue change throughout Q1 2022?
+- Which month generates the highest revenue?
+- What are the busiest operating hours?
+- Which weekdays contribute the most trips and revenue?
+- How does daily revenue fluctuate over time?
+- What is the average value of each completed trip?
+- What is the average number of passengers per trip?
+
+These insights help transform raw trip records into actionable business information through an intuitive reporting interface.
+
+---
+
+## Project Status & Future Improvements
+
+### Completed
+
+- ✅ Google BigQuery environment configured
+- ✅ NYC Yellow Taxi dataset imported
+- ✅ SQL transformation pipeline developed
+- ✅ Staging and mart data models created
+- ✅ dbt project configured
+- ✅ dbt models executed successfully
+- ✅ dbt tests completed
+- ✅ dbt documentation generated
+- ✅ dbt lineage graph generated
+- ✅ Aggregated reporting datasets exported
+- ✅ Interactive Tableau dashboard completed
+- ✅ Project documentation completed
+- ✅ GitHub repository organized
+
+### Next Improvements
+
+- Publish interactive dbt Docs with GitHub Pages
+- Expand the data model with additional mart tables
+- Extend the analysis beyond Q1 2022
+- Replace exported CSV datasets with direct BigQuery connectivity in Tableau
 
 ---
 
 ## Author
 
-Ahmad Iqbal Maulana
+**Ahmad Iqbal Maulana**
 
-LinkedIn:
-https://www.linkedin.com/in/ahmad-iqbal-maulana-9669b8228
+- **LinkedIn**  
+  https://www.linkedin.com/in/ahmad-iqbal-maulana-9669b8228
 
-GitHub:
-https://github.com/yourvaiqbal
+- **GitHub**  
+  https://github.com/yourvaiqbal
+
+- **Tableau Public**  
+  https://public.tableau.com/app/profile/data.analyst.iqbal
