@@ -6,7 +6,7 @@
 - Layered data modeling (Source → Staging → Data Mart)
 - SQL transformations for business-ready datasets
 - Interactive Tableau dashboard with executive KPIs
-- Modular project structure following analytics engineering best practices
+- Modular project structure for maintainable analytics workflows
 
 ## Project Overview
 
@@ -14,7 +14,7 @@ This project documents my hands-on learning journey in building an end-to-end da
 
 Using the NYC Yellow Taxi Trip Records (Q1 2022), I developed an end-to-end analytics workflow by transforming raw transactional data into business-ready datasets before building an interactive Tableau dashboard.
 
-Throughout this project, I explored a modern analytics workflow, including data warehousing in BigQuery, SQL transformation, dbt modeling, data validation, and dashboard development in Tableau.
+Throughout this project, I implemented a modern analytics workflow, including data warehousing in BigQuery, SQL transformation, dbt modeling, data validation, and dashboard development in Tableau.
 
 Due to the limitations of a personal Google Cloud account, this project focuses on NYC Yellow Taxi trips during Q1 2022. Although the dataset scope is intentionally limited, the overall workflow reflects practices commonly used in real-world data analytics projects.
 
@@ -43,7 +43,9 @@ Throughout this project, I practiced:
 
 NYC TLC Yellow Taxi Trip Records (Q1 2022)
 
-Dataset Size: ~8.6 million trip records (Q1 2022)
+**Dataset Size**
+
+~8.6 million trip records (Q1 2022)
 
 **Source**
 
@@ -112,7 +114,7 @@ The final dashboard was developed in Tableau to provide an executive summary of 
 
 ![Dashboard](assets/dashboard.png)
 
-### Interactive Dashboard
+### Live Dashboard
 
 Tableau Public
 
@@ -166,7 +168,7 @@ The staging layer standardizes the raw data by:
 - Creating derived date and time attributes
 - Preparing clean datasets for downstream transformations
 
-### Mart Layer
+### Data Mart Layer
 
 The mart layer contains aggregated datasets optimized for business reporting and Tableau dashboards.
 
@@ -199,7 +201,7 @@ Explore the generated dbt documentation, including model lineage, metadata, and 
 
 🔗 **Live dbt Docs**
 
-https://YOUR_DBT_DOCS_LINK
+Cooming soon...
 
 The modular design enables each transformation model to be developed, tested, and maintained independently while preserving clear dependencies across the entire analytics workflow.
 
@@ -291,7 +293,7 @@ These insights help transform raw trip records into actionable business informat
 
 ---
 
-## Project Status & Future Improvements
+## Project Status
 
 ### Completed
 
