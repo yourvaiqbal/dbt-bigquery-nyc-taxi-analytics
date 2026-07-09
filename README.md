@@ -1,10 +1,18 @@
 # NYC Taxi Analytics Pipeline with BigQuery, dbt & Tableau
 
+## Project Highlights
+
+- End-to-end ELT workflow using Google BigQuery and dbt
+- Layered data modeling (Source → Staging → Data Mart)
+- SQL transformations for business-ready datasets
+- Interactive Tableau dashboard with executive KPIs
+- Modular project structure following analytics engineering best practices
+
 ## Project Overview
 
 This project documents my hands-on learning journey in building an end-to-end data analytics pipeline using Google BigQuery, dbt Core, SQL, and Tableau.
 
-Using the NYC Yellow Taxi Trip Records (Q1 2022), I practiced transforming raw transactional data into business-ready datasets before developing an interactive dashboard using Tableau for reporting and analysis.
+Using the NYC Yellow Taxi Trip Records (Q1 2022), I developed an end-to-end analytics workflow by transforming raw transactional data into business-ready datasets before building an interactive Tableau dashboard.
 
 Throughout this project, I explored a modern analytics workflow, including data warehousing in BigQuery, SQL transformation, dbt modeling, data validation, and dashboard development in Tableau.
 
@@ -34,6 +42,8 @@ Throughout this project, I practiced:
 **Dataset Used**
 
 NYC TLC Yellow Taxi Trip Records (Q1 2022)
+
+Dataset Size: ~8.6 million trip records (Q1 2022)
 
 **Source**
 
@@ -73,14 +83,15 @@ https://console.cloud.google.com/marketplace/product/city-of-new-york/nyc-tlc-tr
 
 ## Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| Code Editor | Visual Studio Code |
-| Data Warehouse | Google BigQuery |
-| Data Transformation | dbt Core |
-| Query Language | SQL |
-| Version Control | Git & GitHub |
-| Data Visualization | Tableau Public |
+| Category            | Technology         |
+| ------------------- | ------------------ |
+| Code Editor         | Visual Studio Code |
+| Data Warehouse      | Google BigQuery    |
+| SQL Transformation  | SQL                |
+| Data Transformation | dbt Core           |
+| Data Visualization  | Tableau Public     |
+| Version Control     | Git & GitHub       |
+
 
 ---
 
@@ -182,7 +193,7 @@ The lineage graph illustrates the dependency between the source data, staging mo
 
 ![dbt Lineage](assets/lineage_graph.png)
 
-### Interactive dbt Documentation
+### Interactive dbt Docs
 
 Explore the generated dbt documentation, including model lineage, metadata, and dependencies.
 
@@ -266,7 +277,7 @@ The repository is organized to separate SQL transformations, exported datasets, 
 
 The dashboard enables users to explore operational performance and answer key business questions using interactive visualizations and KPI summaries.
 
-Some examples include:
+The dashboard helps answer questions such as:
 
 - How does total revenue change throughout Q1 2022?
 - Which month generates the highest revenue?
@@ -311,11 +322,6 @@ These insights help transform raw trip records into actionable business informat
 
 **Ahmad Iqbal Maulana**
 
-- **LinkedIn**  
-  https://www.linkedin.com/in/ahmad-iqbal-maulana-9669b8228
-
-- **GitHub**  
-  https://github.com/yourvaiqbal
-
-- **Tableau Public**  
-  https://public.tableau.com/app/profile/data.analyst.iqbal
+- LinkedIn: https://www.linkedin.com/in/ahmad-iqbal-maulana-9669b8228
+- GitHub: https://github.com/yourvaiqbal
+- Tableau Public: https://public.tableau.com/app/profile/data.analyst.iqbal
