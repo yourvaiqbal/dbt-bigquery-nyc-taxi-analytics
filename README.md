@@ -44,9 +44,7 @@ NYC TLC Yellow Taxi Trip Records (Q1 2022)
 
 **Dataset Size**
 
-Analysis Scope
-
-Q1 2022 (~8.6 million trip records)
+~8.6 million trip records (Q1 2022)
 
 **Source**
 
@@ -90,7 +88,7 @@ https://console.cloud.google.com/marketplace/product/city-of-new-york/nyc-tlc-tr
 |----------|------------|
 | Code Editor | Visual Studio Code |
 | Data Warehouse | Google BigQuery |
-| Transformation Framework | dbt Core (SQL) |
+| Transformation Framework | dbt Core |
 | Data Visualization | Tableau Public |
 | Version Control | Git & GitHub |
 
@@ -173,7 +171,7 @@ The modular architecture improves the maintainability, readability, and scalabil
 
 ## Dashboard Preview
 
-The final Tableau dashboard presents an executive view of NYC Yellow Taxi operations during Q1 2022, highlighting key performance indicators and operational trends through interactive visualizations.
+The final Tableau dashboard presents an executive view of NYC Yellow Taxi operations during Q1 2022, highlighting key performance indicators and operational trends through interactive dashboards.
 
 ### Dashboard Highlights
 
@@ -218,7 +216,7 @@ The Tableau dashboard provides an interactive overview of NYC Yellow Taxi operat
 
 - Interactive month filter (January–March 2022)
 - Dynamic KPI updates
-- Cross-chart filtering
+- Cross-filtering between visualizations
 - Interactive tooltips
 
 ### Dashboard Design
@@ -237,7 +235,7 @@ The project documentation was generated using dbt Docs, providing an interactive
 
 ### Live dbt Docs
 
-Coming soon...
+https://yourvaiqbal.github.io/dbt-bigquery-nyc-taxi-analytics/
 
 ---
 
@@ -303,8 +301,8 @@ The repository is organized to separate data transformation models, exported dat
 - ✅ Google BigQuery environment configured
 - ✅ NYC Yellow Taxi dataset integrated
 - ✅ dbt project configured
-- ✅ Staging and mart models developed
 - ✅ SQL transformations implemented with dbt
+- ✅ Staging and mart models developed
 - ✅ dbt tests executed successfully
 - ✅ dbt documentation generated
 - ✅ dbt lineage graph generated
