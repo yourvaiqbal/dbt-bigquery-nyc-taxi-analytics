@@ -303,7 +303,7 @@ dbt-bigquery-nyc-taxi-analytics
 └── dbt_project.yml
 ```
 
-The repository is organized to separate data transformation models, exported datasets, Tableau assets, and project documentation, making the project easier to understand, maintain, and extend.
+The repository is organized into separate directories for dbt development, SQL scripts, exported datasets, Tableau assets, documentation, and GitHub Pages deployment, making the project easier to understand, maintain, and extend.
 
 ---
 
