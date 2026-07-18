@@ -276,6 +276,18 @@ dbt-bigquery-nyc-taxi-analytics
 │       └── weekday_trips.csv
 │
 ├── dbt
+│   └── nyc_taxi
+│       ├── models
+│       │   ├── staging
+│       │   └── marts
+│       ├── target
+│       ├── logs
+│       ├── dbt_packages
+│       ├── exposures.yml
+│       ├── dbt_project.yml
+│       └── .gitignore
+│
+├── docs
 │
 ├── sql
 │   ├── 01_staging
@@ -287,7 +299,8 @@ dbt-bigquery-nyc-taxi-analytics
 │
 ├── README.md
 ├── LICENSE
-└── .gitignore
+├── .gitignore
+└── dbt_project.yml
 ```
 
 The repository is organized to separate data transformation models, exported datasets, Tableau assets, and project documentation, making the project easier to understand, maintain, and extend.
