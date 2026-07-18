@@ -1,0 +1,4 @@
+trip_year,trip_quarter,trip_month,trip_month_name,total_trips,total_revenue,avg_fare,avg_passengers
+2022,Q1,1,January,2463900,47231556.17,19.17,1.39
+2022,Q1,2,February,2979418,58091905.12,19.5,1.39
+2022,Q1,3,March,3627887,74711782.83,20.59,1.39

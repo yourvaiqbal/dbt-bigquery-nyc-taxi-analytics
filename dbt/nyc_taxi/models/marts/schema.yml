@@ -1,0 +1,18 @@
+version: 2
+
+models:
+
+  - name: mart_daily_trips
+    description: "Daily aggregated taxi metrics"
+
+  - name: mart_hourly_trips
+    description: "Hourly aggregated taxi metrics"
+
+  - name: mart_weekday_trips
+    description: "Weekday aggregated taxi metrics"
+
+  - name: mart_kpi_summary
+    description: "Executive KPI summary"
+
+  - name: mart_taxi_dashboard
+    description: "Analytics-ready dashboard dataset"

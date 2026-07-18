@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_yellow_trip
+    description: "Staging model for NYC Yellow Taxi Trips Q1 2022"
+
+    columns:
+
+      - name: pickup_datetime
+        description: "Trip pickup timestamp"
+        tests:
+          - not_null
+
+      - name: dropoff_datetime
+        description: "Trip dropoff timestamp"
+        tests:
+          - not_null
+
+      - name: passenger_count
+        description: "Number of passengers"
+
+      - name: trip_distance
+        description: "Trip distance in miles"
+
+      - name: fare_amount
+        description: "Taxi fare"
+
+      - name: tip_amount
+        description: "Driver tip"
+
+      - name: total_amount
+        description: "Total amount charged"

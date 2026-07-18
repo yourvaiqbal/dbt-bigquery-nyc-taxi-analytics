@@ -1,0 +1,26 @@
+version: 2
+
+exposures:
+  - name: nyc_taxi_dashboard
+    label: NYC Taxi Operations Dashboard
+    type: dashboard
+
+    maturity: medium
+
+    url: https://public.tableau.com/app/profile/data.analyst.iqbal/viz/nyc_taxi_17834090367390/Dashboard1
+
+    description: >
+      Interactive Tableau dashboard for analyzing NYC Yellow Taxi Trips
+      (Q1 2022). The dashboard provides operational KPIs, daily trends,
+      hourly demand, weekday performance, and executive business insights.
+
+    depends_on:
+      - ref('mart_taxi_dashboard')
+      - ref('mart_daily_trips')
+      - ref('mart_hourly_trips')
+      - ref('mart_weekday_trips')
+      - ref('mart_kpi_summary')
+
+    owner:
+      name: Ahmad Iqbal Maulana
+      email: yourva.iqbal@gmail.com

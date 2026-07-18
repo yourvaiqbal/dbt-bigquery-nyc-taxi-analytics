@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: nyc_taxi
+
+    database: bigquery-public-data
+    schema: new_york_taxi_trips
+
+    tables:
+      - name: tlc_yellow_trips_2022
+        description: "NYC Yellow Taxi Trips 2022 public dataset"
