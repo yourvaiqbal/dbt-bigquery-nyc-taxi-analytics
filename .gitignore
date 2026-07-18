@@ -31,3 +31,4 @@ venv/
 
 # dbt credentials
 profiles.yml
+dbt_internal_packages/

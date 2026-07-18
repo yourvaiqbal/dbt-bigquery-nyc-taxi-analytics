@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: taxi_source
-    database: data-analyst-portfolio-498910
-    schema: analytics
-
-    tables:
-      - name: stg_taxi_q1_2022
